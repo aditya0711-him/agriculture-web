@@ -1,0 +1,1 @@
+# Use official Node.js runtime as base image\nFROM node:18-alpine\n\n# Set working directory\nWORKDIR /app\n\n# Copy package.json and package-lock.json\nCOPY package*.json ./\n\n# Install dependencies\nRUN npm install\n\n# Copy frontend code\nCOPY . .\n\n# Build the application\nRUN npm run build\n\n# Expose port\nEXPOSE 3000\n\n# Start application\nCMD [\"npm\", \"start\"]\n"
